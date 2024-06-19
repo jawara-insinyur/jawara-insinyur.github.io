@@ -1,3 +1,17 @@
+import TheTeams from "./sections/TheTeams";
+import OurPortfolio from "./sections/OurPortfolio";
+import Services from "./sections/Services";
+import Testimonials from "./sections/Testimonials";
+
 export default function App() {
-	return <h1 className='text-3xl font-bold underline'>Hello world!</h1>;
+  return (
+    <>
+      <main className="container mx-auto">
+        <Services className="mt-32" />
+        <OurPortfolio className="mt-32" />
+        <TheTeams className="mt-32" />
+        <Testimonials className="mt-32" />
+      </main>
+    </>
+  );
 }
