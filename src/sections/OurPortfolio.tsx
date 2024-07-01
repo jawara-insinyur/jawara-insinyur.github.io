@@ -2,9 +2,22 @@ import PortfolioCard, {
   PortfolioCardProps,
 } from "../components/card/PortfolioCard";
 import SectionTitle from "../components/typography/SectionTitle";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { cn } from "../utils";
 
 export default function OurPortfolio({ className }: { className?: string }) {
+  const settings = {
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    infinite: false,
+    swipeToSlide: true,
+    swipe: true,
+  };
+
   const portfolioList: PortfolioCardProps[] = [
     {
       name: "HaloPUS",
@@ -22,16 +35,32 @@ export default function OurPortfolio({ className }: { className?: string }) {
       name: "VentureIt",
       icon: "/images/portfolio/ventureit.png",
     },
+    {
+      name: "ReDis",
+      icon: "/images/portfolio/redis.png",
+    },
+    {
+      name: "Toefl PENS",
+      icon: "/images/portfolio/toefl_pens.png",
+    },
+    {
+      name: "KonsulDoc",
+      icon: "/images/portfolio/konsuldoc.png",
+    },
+    {
+      name: "Free Market",
+      icon: "/images/portfolio/free_market.png",
+    },
   ];
+
   return (
-    <div
-      className={cn("my-[35px] flex flex-col items-center", className)}
-      id="portfolio"
-    >
+    <div className={cn("my-[35px]", className)} id="portfolio">
       <SectionTitle>Our Portfolio</SectionTitle>
-      <div className="grid w-full grid-cols-4 gap-5">
-        {...portfolioList.map((portfolio) => <PortfolioCard {...portfolio} />)}
-      </div>
+      <Slider {...settings} className="pb-8">
+        {portfolioList.map((portfolio) => (
+          <PortfolioCard {...portfolio} />
+        ))}
+      </Slider>
     </div>
   );
 }
