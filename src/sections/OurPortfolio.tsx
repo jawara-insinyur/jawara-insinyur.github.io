@@ -12,7 +12,7 @@ export default function OurPortfolio({ className }: { className?: string }) {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     infinite: false,
     swipeToSlide: true,
     swipe: true,
