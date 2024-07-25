@@ -2,20 +2,22 @@ import PortfolioCard, {
   PortfolioCardProps,
 } from "../components/card/PortfolioCard";
 import SectionTitle from "../components/typography/SectionTitle";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { cn } from "../utils";
 
 export default function OurPortfolio({ className }: { className?: string }) {
-  const settings = {
+  const settings: Settings = {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    infinite: false,
+    infinite: true,
     swipeToSlide: true,
     swipe: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   const portfolioList: PortfolioCardProps[] = [
@@ -58,7 +60,7 @@ export default function OurPortfolio({ className }: { className?: string }) {
       <SectionTitle>Our Portfolio</SectionTitle>
       <Slider {...settings} className="pb-8">
         {portfolioList.map((portfolio) => (
-          <PortfolioCard {...portfolio} />
+          <PortfolioCard {...portfolio} key={portfolio.name} />
         ))}
       </Slider>
     </div>

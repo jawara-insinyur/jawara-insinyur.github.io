@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      gridTemplateColumns: {
+        weapon: "repeat(auto-fit, 33.33%)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
