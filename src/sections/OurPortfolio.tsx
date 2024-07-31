@@ -6,6 +6,8 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { cn } from "../utils";
+import ModalPortfolio from "../components/Modal";
+import { Dialog, DialogTrigger } from "../components/dialog";
 
 export default function OurPortfolio({ className }: { className?: string }) {
   const settings: Settings = {
@@ -36,6 +38,31 @@ export default function OurPortfolio({ className }: { className?: string }) {
     {
       name: "VentureIt",
       icon: "/images/portfolio/ventureit.png",
+      desc: `Aplikasi ini bertujuan untuk membantu UMKM memasarkan produk mereka secara digital dan menjangkau pelanggan yang lebih luas. Platform ini akan bekerja seperti Google Maps, namun khusus untuk UMKM, dengan beberapa fitur tambahan seperti: 
+      1. Pemetaan UMKM 
+      2. Promosi 
+      3. Daily Mission 
+      4. Ulasan Pelanggan`,
+      overviewImg: [
+        "/images/overview-app/ventureit/login.png",
+        "/images/overview-app/ventureit/home.png",
+        "/images/overview-app/ventureit/detail.png",
+        "/images/overview-app/ventureit/mission.png",
+      ],
+      developers: [
+        {
+          path: "/images/developers/nunu27.svg",
+          href: "https://github.com/Nunu27",
+        },
+        {
+          path: "/images/developers/jiven.svg",
+          href: "https://github.com/jhiven",
+        },
+        {
+          path: "/images/developers/freezer9.svg",
+          href: "https://github.com/Freezer9",
+        },
+      ],
     },
     {
       name: "ReDis",
@@ -59,8 +86,15 @@ export default function OurPortfolio({ className }: { className?: string }) {
     <div className={cn("my-[35px]", className)} id="portfolio">
       <SectionTitle>Our Portfolio</SectionTitle>
       <Slider {...settings} className="pb-8">
-        {portfolioList.map((portfolio) => (
-          <PortfolioCard {...portfolio} key={portfolio.name} />
+        {portfolioList.map((portfolio, index) => (
+          <Dialog key={index}>
+            <DialogTrigger asChild>
+              <a className="hover:cursor-pointer">
+                <PortfolioCard {...portfolio} key={portfolio.name} />
+              </a>
+            </DialogTrigger>
+            <ModalPortfolio props={portfolio} />
+          </Dialog>
         ))}
       </Slider>
     </div>

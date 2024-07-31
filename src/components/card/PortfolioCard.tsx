@@ -1,6 +1,14 @@
+type DeveloperProps = {
+  path: string;
+  href: string;
+};
+
 export type PortfolioCardProps = {
   name: string;
   icon: string;
+  overviewImg?: string[];
+  developers?: DeveloperProps[];
+  desc?: string;
 };
 
 export default function PortfolioCard({ name, icon }: PortfolioCardProps) {

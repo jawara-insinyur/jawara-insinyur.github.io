@@ -104,7 +104,7 @@
   html {
     font-family: "M PLUS 1", sans-serif;
     background-color: #191919;
-    background-image: url("/background.png");
+    background-image: url("/background-svg.svg");
     background-position: center top;
     background-size: 130%;
     background-repeat: repeat-y;
