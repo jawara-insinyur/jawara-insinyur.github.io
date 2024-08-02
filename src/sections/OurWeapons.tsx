@@ -79,7 +79,7 @@ export default function OurWeapons({ className }: { className?: string }) {
         {Object.entries(weapons).map(([type, list]) => (
           <div className="flex flex-col items-center" key={type}>
             <h1 className="pb-12 text-2xl font-bold">{type}</h1>
-            <div className={`grid-cols-${Math.min(list.length, 3)} grid gap-1`}>
+            <div className={`grid-cols-${Math.min(list.length, 3)} lg:grid-cols-${Math.min(list.length, 3)} grid gap-1`}>
               {list.map((weapon) => (
                 <div
                   className="flex flex-col items-center gap-2.5"
