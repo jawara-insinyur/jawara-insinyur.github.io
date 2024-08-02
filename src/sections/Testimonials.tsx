@@ -35,7 +35,7 @@ export default function Testimonials({ className }: { className?: string }) {
       id="testimonials"
     >
       <SectionTitle>Testimonials</SectionTitle>
-      <div className="grid w-full grid-cols-3 gap-6">
+      <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {...testimonialsList.map((testimoni) => (
           <TestimonialCard {...testimoni} />
         ))}

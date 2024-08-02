@@ -20,6 +20,26 @@ export default function OurPortfolio({ className }: { className?: string }) {
     swipe: true,
     autoplay: true,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const portfolioList: PortfolioCardProps[] = [

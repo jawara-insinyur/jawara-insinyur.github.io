@@ -73,7 +73,7 @@ export default function TheTeams({ className }: { className?: string }) {
   return (
     <div className={cn("items-center", className)} id="teams">
       <SectionTitle>The Teams</SectionTitle>
-      <div className="grid-col grid grid-cols-4 gap-5 px-24">
+      <div className="grid grid-cols-1 gap-5 px-24 sm:grid-cols-2 lg:grid-cols-4">
         {...teamData.map((team) => <TeamsCard {...team} />)}
       </div>
     </div>

@@ -9,7 +9,7 @@ export default function Hero({ className }: { className?: string }) {
         "flex h-svh flex-col items-center justify-center gap-[80px]",
       )}
     >
-      <div className="flex flex-col items-center justify-center gap-[8px] tracking-[.10em]">
+      <div className="flex flex-col items-center justify-center gap-[8px] text-center tracking-[.10em]">
         <h1 className="text-5xl font-bold">
           Jawaranya <span className="text-[#16F0F4]">Insinyur</span>
         </h1>
